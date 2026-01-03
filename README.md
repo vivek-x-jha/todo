@@ -43,12 +43,6 @@ uv run uvicorn main:app --reload
 http://127.0.0.1:8000
 ```
 
-3) Open your browser at:
-
-```
-http://127.0.0.1:8000
-```
-
 ## How to test the API
 
 ### In the browser
