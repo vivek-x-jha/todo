@@ -1,7 +1,7 @@
 [project]
 name = "todo"
 version = "0.1.0"
-description = "Add your description here"
+description = "A small FastAPI app that lets you manage tasks using simple Python code and a web browser"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
