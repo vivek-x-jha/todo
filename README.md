@@ -18,38 +18,29 @@ The class has a `to_dict()` method so it can be returned as JSON.
 
 ## How to run the server
 
-### If you cloned this project
+1) Clone the project:
 
-1) Install dependencies from the lockfile (or resolve them if no lockfile exists):
+```
+git clone <your-repo-url>
+cd todo
+```
+
+2) Install dependencies from the lockfile (or resolve them if no lockfile exists):
 
 ```
 uv sync
 ```
 
-2) Start the server:
+3) Start the server:
 
 ```
 uv run uvicorn main:app --reload
 ```
 
-3) Open your browser at:
+4) Open your browser at:
 
 ```
 http://127.0.0.1:8000
-```
-
-### If you are working locally
-
-1) Install dependencies (using `uv`):
-
-```
-uv add fastapi uvicorn
-```
-
-2) Start the server from this folder:
-
-```
-uvicorn main:app --reload
 ```
 
 3) Open your browser at:
