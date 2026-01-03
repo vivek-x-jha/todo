@@ -1,0 +1,88 @@
+You are creating a VERY beginner-friendly FastAPI project for someone who knows:
+- basic Python (variables, lists, dicts, functions)
+- basic classes (__init__, attributes, methods)
+- basic shell usage
+- NO web programming concepts
+
+GOALS:
+- Treat FastAPI like "Python functions exposed to the browser"
+- Reinforce basic object-oriented programming using simple custom classes
+- Avoid async, databases, ORMs, authentication, or frontend frameworks
+- Use only in-memory Python data structures
+- Keep everything simple, explicit, and readable
+
+PROJECT NAME:
+task_api
+
+PROJECT STRUCTURE:
+task_api/
+├── main.py
+└── README.md
+
+REQUIREMENTS:
+- Use FastAPI
+- Use uvicorn to run the server
+- No extra dependencies beyond fastapi and uvicorn
+- Python 3.10+
+
+CORE DATA MODEL:
+- Create a custom Python class `Task`
+- `Task` should have:
+  - attributes: id (int), title (str), done (bool)
+  - __init__ method
+  - a method `to_dict()` that returns a dict representation
+
+- Store tasks in a list called `tasks` containing `Task` objects
+
+FUNCTIONALITY TO IMPLEMENT:
+
+1) Root endpoint
+- GET /
+- Returns JSON: {"message": "Hello from FastAPI"}
+
+2) View all tasks
+- GET /tasks
+- Returns {"tasks": [task.to_dict() for task in tasks]}
+
+3) Add a task
+- POST /tasks
+- Accepts a query parameter `title: str`
+- Creates a new Task:
+  - id = len(tasks) + 1
+  - done = False
+- Appends it to the list
+- Returns the created task as dict
+
+4) Mark task as done
+- POST /tasks/{task_id}/done
+- Finds the Task by id
+- Sets done = True
+- Returns the updated task as dict
+- If not found, return {"error": "Task not found"}
+
+STYLE RULES:
+- Use synchronous functions (def, not async def)
+- Use exactly one custom class (Task)
+- No Pydantic models
+- No dataclasses
+- No inheritance
+- Keep logic simple and readable
+- Avoid clever Python tricks or abstractions
+
+README.md REQUIREMENTS:
+- Explain what the project is in plain English
+- Explain what an API is using simple language
+- Explain the Task class and why it exists
+- Explain how to run the server step by step
+- Show the exact uvicorn command
+- Explain how to test endpoints using:
+  - the browser
+  - /docs (Swagger UI)
+- Explain the mental model:
+  "Python function → URL → JSON response"
+
+OUTPUT:
+- Create all files
+- Include full code for main.py
+- Include a complete README.md
+- Do NOT add extra features beyond what is specified
